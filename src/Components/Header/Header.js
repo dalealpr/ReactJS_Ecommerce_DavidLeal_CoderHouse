@@ -14,8 +14,10 @@ const styles = {
     headerContainer: {
         gridArea: 'header',
         height:'500px',
-
         border: `solid 2px red`,
+
+        display: 'flex',
+        justifyContent: 'center',
     }
   }
 

@@ -36,3 +36,12 @@ padding: .5em 0 .5em .5em;
 img{
     width: 100px;
 }
+
+button{
+    all: unset;
+    cursor: pointer;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}

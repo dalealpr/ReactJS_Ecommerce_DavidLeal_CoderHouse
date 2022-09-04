@@ -1,25 +1,26 @@
 import React from 'react';
 import CartIcon from '@mui/icons-material/ShoppingCart';
+import ImgLogo from '../../assets/daleal_instruments.png';
 
 const Nav = () => {
     return (
         <div style={styles.navConteiner} className="nav-cont">
             {/* Imagen Logo del eCommerce */}
             {/* en la ruta coloco la variable logo porque importe el png */}
-            <a className='a_logo' href="index.html"><img src="" alt="logo" /></a>
+            <a className='a_logo' style={styles.logo} href="index.html"><img style={styles.logoImg} src={ImgLogo} alt="logo" /></a>
 
 
             {/* Nav de la pagina */}
             <nav style={styles.nav}>
                 <ul style={styles.nav_ul}>
-                    <li><a style={styles.nav_li} className='nav_a' href="#">PRODUCTOS</a></li>
-                    <li><a style={styles.nav_li} className='nav_a' href="#">NOSOTROS</a></li>
-                    <li><a style={styles.nav_li} className='nav_a' href="#">CONTACTO</a></li>
-                    <li><a style={styles.nav_li} className='nav_a' href="#">USUARIO</a></li>
+                    <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">PRODUCTOS</a></li>
+                    <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">NOSOTROS</a></li>
+                    <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">CONTACTO</a></li>
+                    <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">USUARIO</a></li>
                 </ul>
             </nav>
 
-            <button><CartIcon /></button>
+            <button style={styles.buttonCont}><CartIcon style={styles.button}/></button>
         </div>
     )
 }
@@ -32,7 +33,8 @@ const styles = {
         height: '60px',
         border: `solid 2px red`,
         color: 'white',
-        padding: `0 60px`,
+        paddingLeft: '75px',
+        paddingRight: '55px',
         backgroundColor: '#333333',
 
         display: 'flex',
@@ -40,22 +42,75 @@ const styles = {
         alignItems: 'center',
     },
 
+    //----------------------------------------------//
+
+    // Logo eCommerce
+    logo:{
+        backgroundColor:'bule',
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+
+    logoImg:{
+        width: '115px',
+    },
+
+    //----------------------------------------------//
+
     //Nav
     nav: {
+        height: '100%',
         display: 'flex',
     },
 
     //Nav-ul
     nav_ul: {
+        height: '100%',
+
         display: 'flex',
         alignItems: 'center',
     },
 
-    //Nav-li
+    //Nav-ul-li-a
     nav_li: {
+        height: '100%',
+
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    //Nav-ul-li-a
+    nav_a: {
+        height: '100%',
         color: 'white',
-        padding: `0 30px`,
-    }
+
+        padding: `0px 30px`,
+        fontSize: '15px',
+        fontWeight: '500',
+
+        display: 'flex',
+        alignItems: 'center',
+    },
+
+    //----------------------------------------------//
+
+        // Carrito de Compras
+        buttonCont: {
+            width: '115px',
+            height:'80%',
+
+            display: 'flex',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+        },
+
+        button: {
+            width: '75px',
+            height:'80%',
+        },
+    
 }
 
 export default Nav

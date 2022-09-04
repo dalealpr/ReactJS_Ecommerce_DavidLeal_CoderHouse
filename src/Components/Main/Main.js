@@ -14,9 +14,12 @@ const styles = {
     mainContainer: {
         gridArea: 'main',
         height:'500px',
+        color:'white',
         backgroundColor:'#1b1b1b',
-
         border: `solid 2px red`,
+
+        display: 'flex',
+        justifyContent: 'center',
     }
   }
 

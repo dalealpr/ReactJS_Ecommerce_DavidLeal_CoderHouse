@@ -13,9 +13,11 @@ const styles = {
     //Contenedor del Footer
     footerContainer: {
         gridArea: 'footer',
-        height:'500px',
-
+        height:'300px',
         border: `solid 2px red`,
+
+        display: 'flex',
+        justifyContent: 'center',
     }
   }
 
