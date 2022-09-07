@@ -1,6 +1,17 @@
 import React from 'react';
-import CartIcon from '@mui/icons-material/ShoppingCart';
 import ImgLogo from '../../assets/daleal_instruments.png';
+import CartWidget from './CartWidget';
+
+
+// ARRAY CATEGORIAS
+const categorias = [
+    { id:0, nombre: 'Guitarras Acusticas'},
+    { id:1, nombre: 'Guitarras Electricas'},
+    { id:2, nombre: 'Bajos'},
+    { id:3, nombre: 'Baterias y Percusion'},
+    { id:4, nombre: 'Pianos y teclados'},
+]
+
 
 const Nav = () => {
     return (
@@ -20,7 +31,8 @@ const Nav = () => {
                 </ul>
             </nav>
 
-            <button style={styles.buttonCont}><CartIcon style={styles.button}/></button>
+            {/* Icono Carrito */}
+            <CartWidget/>
         </div>
     )
 }
@@ -93,24 +105,6 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
     },
-
-    //----------------------------------------------//
-
-        // Carrito de Compras
-        buttonCont: {
-            width: '115px',
-            height:'80%',
-
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-        },
-
-        button: {
-            width: '75px',
-            height:'80%',
-        },
-    
 }
 
 export default Nav
