@@ -8,6 +8,7 @@ import Main from './Components/Main/Main';
 
 
 function App() {
+  // mensaje ItemList
   const mensaje = "Hola a todos los que visitan este sitio Web"
 
   return (

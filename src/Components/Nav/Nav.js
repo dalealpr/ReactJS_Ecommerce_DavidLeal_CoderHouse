@@ -3,14 +3,19 @@ import ImgLogo from '../../assets/daleal_instruments.png';
 import CartWidget from './CartWidget';
 
 
+
 // ARRAY CATEGORIAS
 const categorias = [
-    { id:0, nombre: 'Guitarras Acusticas'},
-    { id:1, nombre: 'Guitarras Electricas'},
-    { id:2, nombre: 'Bajos'},
-    { id:3, nombre: 'Baterias y Percusion'},
-    { id:4, nombre: 'Pianos y teclados'},
+    { id: 0, nombre: 'Guitarras Acusticas' },
+    { id: 1, nombre: 'Guitarras Electricas' },
+    { id: 2, nombre: 'Bajos' },
+    { id: 3, nombre: 'Baterias y Percusion' },
+    { id: 4, nombre: 'Pianos y teclados' },
 ]
+
+//FUNCIONES HOVER 
+
+
 
 
 const Nav = () => {
@@ -24,15 +29,17 @@ const Nav = () => {
             {/* Nav de la pagina */}
             <nav style={styles.nav}>
                 <ul style={styles.nav_ul}>
-                    <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">PRODUCTOS</a></li>
+                    <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">PRODUCTOS<hr style={styles.nav_hr} ></hr></a></li>
                     <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">NOSOTROS</a></li>
                     <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">CONTACTO</a></li>
                     <li style={styles.nav_li}><a style={styles.nav_a} className='nav_a' href="#">USUARIO</a></li>
                 </ul>
             </nav>
 
+
+
             {/* Icono Carrito */}
-            <CartWidget/>
+            <CartWidget />
         </div>
     )
 }
@@ -57,14 +64,14 @@ const styles = {
     //----------------------------------------------//
 
     // Logo eCommerce
-    logo:{
-        backgroundColor:'bule',
+    logo: {
+        backgroundColor: 'bule',
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
 
-    logoImg:{
+    logoImg: {
         width: '115px',
     },
 
@@ -103,8 +110,23 @@ const styles = {
         fontWeight: '500',
 
         display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        justifyItems:'center',
         alignItems: 'center',
     },
+
+    nav_hr:{
+        display: 'none',
+        backgroundColor: 'white',
+        position: 'relative',  
+        width: '100%',
+        height: '1px',
+    },
+
+
 }
+
+
 
 export default Nav
