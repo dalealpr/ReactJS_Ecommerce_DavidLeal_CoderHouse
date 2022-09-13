@@ -1,5 +1,5 @@
 import React from 'react';
-import ImgLogo from '../../assets/daleal_instruments.png';
+import Logo from '../../assets/img/logo/logo_01_white.png'
 import CartWidget from './CartWidget';
 
 
@@ -23,7 +23,7 @@ const Nav = () => {
         <div style={styles.navConteiner} className="nav-cont">
             {/* Imagen Logo del eCommerce */}
             {/* en la ruta coloco la variable logo porque importe el png */}
-            <a className='a_logo' style={styles.logo} href="index.html"><img style={styles.logoImg} src={ImgLogo} alt="logo" /></a>
+            <a className='a_logo' style={styles.logo} href="index.html"><img style={styles.logoImg} src={Logo} alt="logo" /></a>
 
 
             {/* Nav de la pagina */}
@@ -65,15 +65,15 @@ const styles = {
 
     // Logo eCommerce
     logo: {
-        backgroundColor: 'bule',
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
 
     logoImg: {
-        width: '115px',
+        width: '210px',
     },
+
 
     //----------------------------------------------//
 

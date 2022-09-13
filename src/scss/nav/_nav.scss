@@ -1,0 +1,21 @@
+//Nav Links Linea
+.nav_a:after{
+    content: "";
+    position: absolute;
+    flex-flow: column;
+    margin-top: 50px;
+    width: 0px;
+    height: 3px;
+    top: 0;
+    background: #ffffff;
+    transition: width 0.3s;
+
+
+}
+
+.nav_a:hover::after{
+    width: 90px;
+}
+
+
+
