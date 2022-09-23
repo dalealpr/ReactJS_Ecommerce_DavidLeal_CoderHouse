@@ -1,24 +1,26 @@
 import React from 'react';
+import ItemListContainer from '../containers/itemListContainer/ItemListContainer';
 
 const Header = () => {
-    return(
-        <main style={styles.headerContainer}>
+    return (
+        <div className='header-container' style={styles.headerCont}>
             <h1>HEADER</h1>
-        </main>
+        </div>
     )
 }
 
 //ESTILOS CSS
 const styles = {
-    //Contenedor del Footer
-    headerContainer: {
+    headerCont:{
+        height: '200px',
         gridArea: 'header',
-        height:'500px',
-        border: `solid 2px red`,
+        border: `solid 3px red`,
+        backgroundColor: '#F4D03F',
 
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
     }
-  }
+}
 
 export default Header

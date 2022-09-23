@@ -48,5 +48,4 @@ const styles = {
     },
 }
 
-
 export default CartWidget
