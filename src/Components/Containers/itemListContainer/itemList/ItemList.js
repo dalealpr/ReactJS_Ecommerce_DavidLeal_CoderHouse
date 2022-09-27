@@ -16,21 +16,21 @@ const ItemList = ({ products, onAdd }) => {
 //ESTILOS CSS
 const styles = {
     itemList: {
-        width: '90%',
+        width: '77%',
         backgroundColor: '#c6c6c6',
         color: 'black',
         padding: '25px 0',
 
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'start',
+
     },
 
     itemsCont: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(5, 1fr)',
+        justifyItems: 'start',
     }
 
 }

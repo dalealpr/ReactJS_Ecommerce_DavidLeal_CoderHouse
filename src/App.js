@@ -1,8 +1,14 @@
 import React from 'react';
+//Import Router
+import { BrowserRouter, Routes, Route, } from "react-router-dom";
 //Import Components
 import Nav from './Components/nav/Nav';
 import Header from './Components/header/Header';
-import MainIndex from './Components/mainIndex/MainIndex';
+import ItemListContainer from './Components/containers/itemListContainer/ItemListContainer';
+import Cart from './Components/cartView/Cart';
+import Footer from './Components/footer/Footer';
+import Home from './Components/home/Home';
+
 
 function App() {
 
@@ -24,9 +30,17 @@ function App() {
 
   return (
     <div className="main-container">
-      <Nav />
-      <Header />
-      <MainIndex greeting={mensaje} />
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          {/* <Header /> */}
+          <Route path='/' element={<Home/>} />
+          <Route path='categoria/' />
+          <Route path='productos/' element={<ItemListContainer/>}/>
+          <Route path='/cart/'element={<Cart/>} />
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
     </div>
   );
 }
@@ -38,8 +52,9 @@ const styles = {
     gridTemplateAreas:
       `
       'nav'
+      'prodList'
       'header'
-      'item-count'
+      'mainIndex'
     `,
   }
 }

@@ -1,27 +1,69 @@
-import React from 'react';
-import Logo from '../../assets/img/logo/logo_01_white.png'
+import React, { useEffect, useState } from 'react';
+//Import Link Router
+import { Link, NavLink } from "react-router-dom";
+//Import IMG
+import Logo from '../../assets/img/logo/logo_01_white.png';
+import Flecha from '../../assets/img/nav/flecha_01.png';
 //Import Components
 import CartWidget from './CartWidget';
+//Import Lista de productos .JSON
+import categoriasProducts from "../../categoriasProductos.json";
+
+
+//Promesa
+const promesa = new Promise((res, rej) => {
+    res(categoriasProducts)
+})
+
 
 const Nav = () => {
+
+    //State
+    const [categorias, setCategorias] = useState([])
+
+    useEffect(() => {
+        promesa
+            .then((data) => {
+                console.log('esta todo bien')
+                setCategorias(data)//Actualizacion del componente
+            })
+            .catch(() => {
+                console.log('esta todo mal')
+            })
+    }, [])
+
+
     return (
         <div style={styles.navConteiner} className='nav-conteiner'>
 
             {/* Imagen Logo del eCommerce */}
-            <a className='a_logo' style={styles.logo} href="index.html"><img src={Logo} style={styles.logoImg} alt="logo" /></a>
+            <Link className='a_logo' style={styles.logo} to={'/'}><img src={Logo} style={styles.logoImg} alt="logo" /></Link>
+
+
 
             {/* Nav de la pagina */}
             <nav style={styles.nav}>
-                <ul style={styles.nav_ul}>
-                    <li className='nav_li' style={styles.nav_li}><a className='nav_a' style={styles.nav_a} href="#">PRODUCTOS</a></li>
-                    <li className='nav_li' style={styles.nav_li}><a className='nav_a' style={styles.nav_a} href="#">NOSOTROS</a></li>
-                    <li className='nav_li' style={styles.nav_li}><a className='nav_a' style={styles.nav_a} href="#">CONTACTO</a></li>
-                    <li className='nav_li' style={styles.nav_li}><a className='nav_a' style={styles.nav_a} href="#">USUARIO</a></li>
+                <ul className='menu_horizontal' style={styles.nav_ul}>
+                    <li className='nav_li' style={styles.nav_li}>
+                        <NavLink className='nav_a' id='btnProducto' style={styles.nav_a} to={'/productos'}>PRODUCTOS<img src={Flecha} style={styles.flecha} /></NavLink>
+                        <ul className='menu_vertical' style={styles.prodList_ul}>
+
+                            {/* categoria de productos */}
+                            {categorias.map((categoria) =>
+                                <li style={styles.prodList_li}>
+                                    <NavLink key={categoria.id} className='nav_a_list' to={categoria.ruta} style={styles.NavLink}>{categoria.nombre}</NavLink>
+                                </li>
+                            )}
+                        </ul>
+                    </li>
+                    <li className='nav_li' style={styles.nav_li}><NavLink className='nav_a' style={styles.nav_a} to={'/nosotros'}>NOSOTROS</NavLink></li>
+                    <li className='nav_li' style={styles.nav_li}><NavLink className='nav_a' style={styles.nav_a} to={'/contacto'}>CONTACTO</NavLink></li>
+                    <li className='nav_li' style={styles.nav_li}><NavLink className='nav_a' style={styles.nav_a} to={'/usuario'}>USUARIO</NavLink></li>
                 </ul>
             </nav>
 
             {/* Icono Carrito */}
-            <CartWidget />
+            <Link to={'/cart/'}><CartWidget /></Link>
 
         </div>
     )
@@ -29,15 +71,13 @@ const Nav = () => {
 
 
 
-
 //ESTILOS CSS
 const styles = {
-
     //Contenedor del Nav
     navConteiner: {
         gridArea: 'nav',
-        height: '60px',
-        border: `solid 2px red`,
+        height: '70px',
+        // border: `solid 2px red`,
         color: 'white',
         paddingLeft: '50px',
         paddingRight: '50px',
@@ -96,22 +136,65 @@ const styles = {
         fontWeight: '500',
 
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         justifyItems: 'center',
         alignItems: 'center',
     },
 
+    nav_ax: {
+        height: '100%',
+        color: 'white',
+        backgroundColor: '#181818',
+
+        padding: `0px 30px`,
+        fontSize: '15px',
+        fontWeight: '500',
+
+        display: 'none',
+        justifyContent: 'center',
+        justifyItems: 'center',
+        alignItems: 'center',
+    },
+
+    flecha: {
+        width: '9px',
+        marginLeft: '4px',
+    },
     //----------------------------------------------//
-    // btn: {
-    //     width: '210px',
-    //     display: 'flex',
-    //     justifyContent: 'end',
+    //LISTA DE CATEGORIAS
+    prodList_ul: {
+        width: '100%',
+        height: '85px',
+        marginTop: '150px',
+        position: 'absolute',
+        right: '0',
 
-    // },
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#505050',
+        gap: '50px',
+    },
 
-    // btn_img: {
-    //     width: '34px',
-    // },
+    //Nav-ul-li-a
+    prodList_li: {
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+
+    NavLink: {
+        height: '100%',
+        fontSize: '16px',
+        fontWeight: '400',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    btn_img: {
+        width: '34px',
+    },
 }
 export default Nav

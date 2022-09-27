@@ -66,6 +66,7 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        padding: '20px 0',
     },
 
     h1: {

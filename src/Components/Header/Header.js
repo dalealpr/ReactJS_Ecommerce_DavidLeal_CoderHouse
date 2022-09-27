@@ -4,7 +4,7 @@ import ItemListContainer from '../containers/itemListContainer/ItemListContainer
 const Header = () => {
     return (
         <div className='header-container' style={styles.headerCont}>
-            <h1>HEADER</h1>
+
         </div>
     )
 }
@@ -12,10 +12,8 @@ const Header = () => {
 //ESTILOS CSS
 const styles = {
     headerCont:{
-        height: '200px',
+        height: '600px',
         gridArea: 'header',
-        border: `solid 3px red`,
-        backgroundColor: '#F4D03F',
 
         display: 'flex',
         justifyContent: 'center',

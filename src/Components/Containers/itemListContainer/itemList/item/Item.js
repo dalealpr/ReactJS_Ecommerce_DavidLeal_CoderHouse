@@ -1,18 +1,17 @@
 import React from 'react';
 import ItemCount from './itemCount/ItemCount';
+//Import Link Router
+import {Link,NavLink} from "react-router-dom";
 
 const Item = ({ producto, onAdd, stock }) => {
     return (
         <div className='Item' style={styles.itemContainer}>
-            <h4>Items</h4>
-            <a className='prod_a' href="index.html"><img src={producto.img} style={styles.itemImg} alt="img" /></a>
+            <Link className='prod_a' to={'/producto/:IdProducto'} href="index.html"><img src={producto.img} style={styles.itemImg} alt="img" /></Link>
             <div>
-                <h5 style={styles.itemTitulo}>{producto.nombre}</h5>
+                <h5 style={styles.itemTitulo}>{producto.marca}</h5>
+                <p style={styles.itemDesc}>{producto.nombre}</p>
             </div>
             <span style={styles.itemPrecio}>$ {producto.precio}</span>
-
-            <ItemCount onAdd={onAdd} stock={stock} initial={1} />
-
         </div>
     )
 }
@@ -20,12 +19,11 @@ const Item = ({ producto, onAdd, stock }) => {
 //ESTILOS CSS
 const styles = {
     itemContainer: {
-        width: '40%',
-        height: '540px',
+        height: '380px',
         backgroundColor: 'white',
         color: 'black',
-        margin: '0 25px',
-        padding: '0 13px',
+        margin: '20px 20px',
+        padding: '18px 20px 45px',
 
         display: 'flex',
         flexDirection: 'column',
@@ -34,19 +32,24 @@ const styles = {
 
     itemTitulo: {
         height: '45px',
-        marginTop: '10px',
-        fontSize: '16px',
+        marginTop: '15px',
+        fontSize: '20px',
     },
 
     itemImg: {
-        width: '220px',
+        width: '100%',
         backgroundColor: 'red',
+    },
+
+    itemDesc:{
+        height: '45px',
+        fontSize: '15px',
     },
 
     itemPrecio: {
         marginTop: '14px',
-        fontSize: '22px',
-        fontWeight: '700',
+        fontSize: '21px',
+        fontWeight: '500',
     },
 
 }

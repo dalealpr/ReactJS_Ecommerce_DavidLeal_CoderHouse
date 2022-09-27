@@ -47,4 +47,22 @@ button {
   transition: width 0.3s; }
 
 .nav_a:hover::after {
-  width: 90px; }
+  width: 100px; }
+
+.nav_a_list {
+  color: #ffffff; }
+
+.nav_a_list:hover {
+  color: #ffee00; }
+
+.menu_vertical {
+  display: none; }
+
+.menu_horizontal li:hover .menu_vertical {
+  display: flex; }
+
+.header-container {
+  background-image: url(../assets/img/header/header_03.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
