@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = ({ greeting }) => {
 
     let { IdCategoria } = useParams()
-    console.log(IdCategoria);
+
 
     //State
     const [products, setProducts] = useState([])
@@ -27,6 +27,7 @@ const ItemListContainer = ({ greeting }) => {
                 setLoading(false)
                 const productosFiltrados = productos.filter(productos => productos.categoria === IdCategoria)
                 setProducts(productosFiltrados)
+                console.log(productosFiltrados)
             } else {
                 setTimeout(() => {
                     // setProducts(respuesta)
@@ -37,7 +38,6 @@ const ItemListContainer = ({ greeting }) => {
         })
     }, [IdCategoria])
 
-    console.log(products)
 
     //Funcion onAdd Agregar al carrito
     const onAdd = (count) => {

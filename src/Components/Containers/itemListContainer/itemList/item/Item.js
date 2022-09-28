@@ -6,7 +6,7 @@ import {Link,NavLink} from "react-router-dom";
 const Item = ({ producto, onAdd, stock }) => {
     return (
         <div className='Item' style={styles.itemContainer}>
-            <Link className='prod_a' to={'/producto/:IdProducto'} href="index.html"><img src={producto.img} style={styles.itemImg} alt="img" /></Link>
+            <Link className='prod_a' to={`/item/${producto.id}`} href="index.html"><img src={producto.img} style={styles.itemImg} alt="img" /></Link>
             <div>
                 <h5 style={styles.itemTitulo}>{producto.marca}</h5>
                 <p style={styles.itemDesc}>{producto.nombre}</p>

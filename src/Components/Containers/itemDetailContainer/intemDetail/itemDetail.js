@@ -1,14 +1,17 @@
 import React from 'react';
+import Item2 from './item2';
 
 const ItemDetail = ({ item }) => {
+
     return (
         < div className='itemDetail' style={styles.ItemDetail}>
 
+
             <h3 style={styles.h3}>ItemDetail</h3>
 
-            <div  style={styles.DetailCont}>
+            <div style={styles.DetailCont}>
 
-                <img style={styles.DetailImg} src={item.img}/>
+                <img style={styles.DetailImg} src={item.img} />
 
                 <div style={styles.DetailContText}>
                     <h4 style={styles.h4}>{item.nombre}</h4>
@@ -33,37 +36,37 @@ const styles = {
         color: 'white',
     },
 
-    h3:{
+    h3: {
         color: 'white',
     },
 
-    h4:{
+    h4: {
         fontSize: '35px',
         marginBottom: '30px',
     },
 
-    DetailCont:{
+    DetailCont: {
         display: 'grid',
         height: '380px',
         gridTemplateColumns: "repeat(2, 1fr)",
-        padding:'40px 70px',
-        gap:'40px',
+        padding: '40px 70px',
+        gap: '40px',
     },
 
-    DetailContText: { 
+    DetailContText: {
         width: '600px',
     },
 
-    DetailImg:{
+    DetailImg: {
         width: '370px',
     },
 
-    precio:{
+    precio: {
         fontSize: '30px',
         marginBottom: '30px',
     },
 
-    parrafo:{
+    parrafo: {
         marginTop: '30px',
         textAlign: 'left',
     },

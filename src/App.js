@@ -11,6 +11,7 @@ import Home from './Components/home/Home';
 import Nosotros from './Components/nosotros/Nosotros';  
 import Contacto from './Components/contacto/Contacto';
 import Usuario from './Components/usuario/Usuario';
+import ItemDetailContainer from './Components/containers/itemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
           <Route path='/cart/'element={<Cart/>} />
 
           <Route path='/categoria/:IdCategoria' element={<ItemListContainer/>}/>
-          <Route path='productos/:IdProducto' element={<ItemListContainer/>}/>
+          <Route path='/item/:IdProducto' element={<ItemDetailContainer/>}/>
 
         </Routes>
         <Footer/>

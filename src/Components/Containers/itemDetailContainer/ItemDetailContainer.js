@@ -1,42 +1,66 @@
 import React, { useEffect, useState } from 'react';
+//Hook useParams (traer cont IdCategoria)
+import { useParams } from "react-router-dom";
 //Import SweetAlerts
 import Swal from 'sweetalert2';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
-import stockProducts from "../../../stockProducts.json";
+import { productos } from '../../../stockProductosX';
+import { customPromise } from '../../../customPromise';
 import ItemDetail from './intemDetail/itemDetail';
 
-//Promesa
-const promesa = new Promise((res, rej) => {
-    res(stockProducts)
-})
 
 const ItemDetailContainer = () => {
 
     //State
-    const [products, setProducts] = useState({})//es {} porque es un producto
-    let [loading, setLoading] = useState(true);
+    const [producto, setProducts] = useState([])
+    let [loading, setLoading] = useState([true]);
+    const { IdProducto } = useParams();
+    console.log(IdProducto);
 
-        useEffect(() => {
-            promesa
-                .then((data) => {
-                    setTimeout(() => {
-                    setProducts(data[0])//Actualizacion del componente
-                    setLoading(!loading)//Spinner
-                    },2000)
-                })
-    
-                .catch(() => {
-                    console.error('esta todo mal')
-                })
-    
-        }, [])
+    //solucion 1
+    useEffect(() => {
+        customPromise(productos).then(respuesta => {
+            setProducts(respuesta)
+            setTimeout(() => {
+                const IdProdParseado = parseInt(IdProducto)
+
+                setLoading(false)
+                const productoFiltrado = productos.filter(productos => productos.id === IdProdParseado)
+                setProducts(productoFiltrado)
+            }, 1000)
+        })
+
+    }, [IdProducto])
+
+
+    //solucion 2
+    // useEffect (() =>{
+    //     customPromise (productos)
+    //         .then (respuesta => {
+    //             setProducts(respuesta(IdProducto))
+    //             setLoading (false)
+    //         })
+
+    // }, [IdProducto]);
+
+
+    console.log(producto)
 
     return (
         <div className='ItemDetailContainer' style={styles.ItemDetailContainer} >
-            <FadeLoader color="#ebc700" size={130} loading={loading}/>
-            <h2  style={styles.h2}>ItemDetailContainer</h2>
-            <ItemDetail item={products}/>
+
+            <h2 style={styles.h2}>ItemDetailContainer</h2>
+
+            <FadeLoader color="#ebc700" size={130} loading={loading} />
+
+            
+            {producto.map((produ) => 
+            <ItemDetail item={produ} />
+            
+            )}
+            {/* <ItemDetail item={producto} /> */}
+
         </div>
     )
 }
@@ -53,7 +77,7 @@ const styles = {
         alignItems: 'center',
     },
 
-    h2:{
+    h2: {
         color: 'white',
     }
 

@@ -8,7 +8,7 @@ export const productos = [
         modelo: "EC-256", 
         precio: 550, 
         stock: 6, 
-        categoria: "GuitarrasElectricas", 
+        categoria: "guitarras-electricas", 
         img: "https://i.ibb.co/NFh0g7c/guitarra-ltd-ec256.png", 
         descrp:"Guitarra Les Paul LTD color negro. Con detalles en las capsulas, clavijeros y tremolo de color Dorado, cuenta con 22 trastes, madera de caoba en el cuerpo y palisandro para el diapason. Hoy en día podemos encontrar modelos de Les Paul con ligeras variaciones, por ejemplo con cuerpos sin tapa de arce, mástil de ébano, o pastillas activas, pero siguen manteniendo el alma del sonido LTD.El radio típico del diapasón de este tipo de guitarra es de 12 pulgadas, permitiéndonos hacer bendings de dos tonos sin temor a que se apaguen a medio camino, manteniendo una altura de cuerdas óptima."
     },
@@ -20,7 +20,7 @@ export const productos = [
         modelo: "RG350DXZ", 
         precio: 600, 
         stock: 5,
-        categoria: "GuitarrasElectricas",
+        categoria: "guitarras-electricas",
         img: "https://i.ibb.co/ykcYmSc/guitarra-ibanezl-rg350dxz.png"
     },
 
@@ -30,7 +30,7 @@ export const productos = [
         marca: "Epiphone", "modelo": "Les Paul Standar 50s", 
         precio: 900, 
         stock: 5,
-        categoria: "GuitarrasElectricas", 
+        categoria: "guitarras-electricas", 
         img: "https://i.ibb.co/bFgqghF/guitarra-epiphone-lespaul-standar50s-metallicgold.png" 
     },
 
@@ -40,7 +40,7 @@ export const productos = [
         marca: "LTD", "modelo": "White Zombie", 
         precio: 1700, 
         stock: 2,
-        categoria: "GuitarrasElectricas", 
+        categoria: "guitarras-electricas", 
         img: "https://i.ibb.co/HBCF81c/guitarra-ltd-kirkhammet-signature-whitezombie.png" 
     },
 
@@ -51,7 +51,7 @@ export const productos = [
         modelo: "Les Paul Standar 60s", 
         precio: 4500, 
         stock: 1,
-        categoria: "GuitarrasElectricas", 
+        categoria: "guitarras-electricas", 
         img: "https://i.ibb.co/vz2H0ch/guitarra-gibson-lespaul-standar60s.png" 
     },   
 
@@ -64,7 +64,7 @@ export const productos = [
         modelo: "118 Nylon", 
         precio: 550, 
         stock: 8,
-        categoria: "Guitarras Acusticas", 
+        categoria: "guitarras-acusticas", 
         img: "https://i.ibb.co/hRQ9ccQ/guitarra-acustica-clasica-raimundo-118-nylon.png" 
     },
 
@@ -75,7 +75,7 @@ export const productos = [
         modelo: "GD20NS", 
         precio: 320, 
         stock: 6,
-        categoria: "Guitarras Acusticas", 
+        categoria: "guitarras-acusticas", 
         img: "https://i.ibb.co/sszqcq9/guitarra-acustica-takamine-GD20-NS.png" 
     },
 
@@ -86,7 +86,7 @@ export const productos = [
         modelo: "AW54JR", 
         precio: 340, 
         stock: 3,
-        categoria: "Guitarras Acusticas", 
+        categoria: "guitarras-acusticas", 
         img: "https://i.ibb.co/7nygJCh/guitarra-acustica-ibanez-aw54jr.png" 
     },
 
@@ -97,7 +97,7 @@ export const productos = [
         modelo: "EWP14WB", 
         precio: 220, 
         stock: 5,
-        categoria: "Guitarras Acusticas", 
+        categoria: "guitarras-acusticas", 
         img: "https://i.ibb.co/WzkRDBd/guitarra-acustica-ibanez-EWP14-WB.png" 
     },
 
@@ -108,7 +108,7 @@ export const productos = [
         modelo: "ARCG34", 
         precio: 80, 
         stock: 12,
-        categoria: "Guitarras Acusticas", 
+        categoria: "guitarras-acusticas", 
         img: "https://i.ibb.co/xff1cQS/guitarra-acustica-vizcaya-ARCG34.png" 
     }, 
 
@@ -120,7 +120,7 @@ export const productos = [
         modelo: "GSR180", 
         precio: 320, 
         stock: 8,
-        categoria: "Bajos", 
+        categoria: "bajos", 
         img: "https://i.ibb.co/Gn14rw6/bajo-ibanez-GSR180-black.png" 
     },
     
@@ -131,7 +131,7 @@ export const productos = [
         modelo: "SR305EB", 
         precio: 460, 
         stock: 9,
-        categoria: "Bajos", 
+        categoria: "bajos", 
         img: "https://i.ibb.co/Kq4wRYh/bajo-ibanez-SR305-EB-5-cuerdas-weathered-black.png" 
     },
 
@@ -142,7 +142,7 @@ export const productos = [
         modelo: "SR2605", 
         precio: 1400, 
         stock: 2,
-        categoria: "Bajos", 
+        categoria: "bajos", 
         img: "https://i.ibb.co/d5NyYXq/bajo-Ibanez-SR2605-5-cuerdas-cerulean-blue-burst.png" 
     },
 
@@ -153,7 +153,7 @@ export const productos = [
         modelo: "204SM", 
         precio: 650, 
         stock:5,
-        categoria: "Bajos", 
+        categoria: "bajos", 
         img: "https://i.ibb.co/khVMThh/bajo-LTD-b-204-SM-natural-satin.png" 
     },
     { 
@@ -163,7 +163,7 @@ export const productos = [
         modelo: "AJB97", 
         precio: 750, 
         stock: 5,
-        categoria: "Bajos", 
+        categoria: "bajos", 
         img: "https://i.ibb.co/Bytx6Rm/bajo-tokai-AJB97-yellow-sunburst.png" 
     },  
     
@@ -176,7 +176,7 @@ export const productos = [
         modelo: "PD-04", 
         precio: 400, 
         stock: 2,
-        categoria: "Baterias", 
+        categoria: "baterias", 
         img:"https://i.ibb.co/TM5Z8Bb/x-Bateria-Power-Drums-PD-04-Green.png"
     },
     
@@ -187,7 +187,7 @@ export const productos = [
         modelo: "RM52KH4", 
         precio: 700, 
         stock: 3,
-        categoria: "Baterias", 
+        categoria: "baterias", 
         img: "https://i.ibb.co/xGCS0bx/x-Bateria-TAMA-Rhythm-Mate-RM52-KH4-color-Red-Stream-RDS.png"
     },
 
@@ -198,7 +198,7 @@ export const productos = [
         modelo: "SLP LSP30CS TUQ", 
         precio: 1600, 
         stock: 2,
-        categoria: "Baterias", 
+        categoria: "baterias", 
         img: "https://i.ibb.co/yqsxPrG/x-Shell-pack-de-3-piezas-Tama-SLP-LSP30-CS-TUQ.png"
     },
 
@@ -209,7 +209,7 @@ export const productos = [
         modelo: "Black Phanter BPNW628XFLKTB", 
         precio: 2600, 
         stock: 1,
-        categoria: "Baterias", 
+        categoria: "baterias", 
         img: "https://i.ibb.co/RvDdTYs/x-Shell-pack-Mapex-Black-Phanter-BPNW628-XFLKTB.png" 
     },
     { 
@@ -219,7 +219,7 @@ export const productos = [
         modelo: "MR42TZUS", 
         precio: 1800, 
         stock: 3,
-        categoria: "Baterias", 
+        categoria: "baterias", 
         img: "https://i.ibb.co/5Bx6JVj/x-Shellpack-TAMA-4-piezas-MR42-TZUS.png" 
     },
 
@@ -232,7 +232,7 @@ export const productos = [
         modelo: "FP-60X", 
         precio: 900, 
         stock: 3,
-        categoria: "Teclados", 
+        categoria: "teclados", 
         img:"https://i.ibb.co/y57Jqst/x-Piano-Digital-Roland-FP-60-X.png" 
     },
     
@@ -243,7 +243,7 @@ export const productos = [
         modelo: "Harmony 54", 
         precio: 350, 
         stock: 4,
-        categoria: "Teclados", 
+        categoria: "teclados", 
         img:"https://i.ibb.co/F6yXPfc/x-Teclado-Alesis-Harmony-54.png" 
     },
 
@@ -254,7 +254,7 @@ export const productos = [
         modelo: "CT-X700", 
         precio: 240, 
         stock: 3,
-        categoria: "Teclados", 
+        categoria: "teclados", 
         img:"https://i.ibb.co/K0B0yvv/x-Teclado-Casio-CT-X700.png" 
     },
 
@@ -265,7 +265,7 @@ export const productos = [
         modelo: "Nautilus 61", 
         precio: 1500, 
         stock: 1,
-        categoria:"Teclados", 
+        categoria:"teclados", 
         img:"https://i.ibb.co/h70JWhY/x-Teclado-Workstation-Korg-Nautilus-61.png"
     },
 
@@ -276,7 +276,7 @@ export const productos = [
         modelo: "EX 73", 
         precio: 2400, 
         stock: 1,
-        categoria:"Teclados", 
+        categoria:"teclados", 
         img:"https://i.ibb.co/K7rwk9T/x-Teclado-Workstation-KROME-EX-73.png"
     }
 
