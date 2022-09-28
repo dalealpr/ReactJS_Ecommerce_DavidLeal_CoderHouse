@@ -5,7 +5,7 @@ import { customPromise } from '../../../customPromise';
 import Swal from 'sweetalert2';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
-import { productos } from "../../../stockProductosX"
+import { productos } from '../../../stockProductos';
 //Hook useParams (traer cont IdCategoria)
 import { useParams } from "react-router-dom";
 

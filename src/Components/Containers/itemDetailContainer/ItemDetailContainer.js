@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
-import { productos } from '../../../stockProductosX';
+import { productos } from '../../../stockProductos';
 import { customPromise } from '../../../customPromise';
 import ItemDetail from './intemDetail/itemDetail';
 import Item2 from './intemDetail/item2';
