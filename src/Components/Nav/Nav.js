@@ -13,7 +13,6 @@ import categoriasProducts from "../../categoriasProductos.json";
 
 const Nav = () => {
 
-
     return (
         <div style={styles.navConteiner} className='nav-conteiner'>
             {/* Imagen Logo del eCommerce */}
@@ -21,10 +20,10 @@ const Nav = () => {
             {/* Nav de la pagina */}
             <nav style={styles.nav}>
                 <ul className='menu_horizontal' style={styles.nav_ul}>
-                    
+
                     <li className='nav_li' style={styles.nav_li}>
 
-                        <NavLink className='nav_a' id='btnProducto' style={styles.nav_a} to={'/productos'}>PRODUCTOS<img src={Flecha} style={styles.flecha} /></NavLink>
+                        <NavLink className='nav_a' id='btnProducto' style={styles.nav_a} >PRODUCTOS<img src={Flecha} style={styles.flecha} /></NavLink>
                         <ul className='menu_vertical' style={styles.prodList_ul}>
 
                             {/* categoria de productos */}

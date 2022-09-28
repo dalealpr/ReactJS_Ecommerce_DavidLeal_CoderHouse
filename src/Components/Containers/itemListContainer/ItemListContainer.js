@@ -5,8 +5,6 @@ import { customPromise } from '../../../customPromise';
 import Swal from 'sweetalert2';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
-//Import Lista de productos .JSON
-import stockProducts from "../../../stockProducts.json";
 import { productos } from "../../../stockProductosX"
 //Hook useParams (traer cont IdCategoria)
 import { useParams } from "react-router-dom";
@@ -23,16 +21,21 @@ const ItemListContainer = ({ greeting }) => {
     let [loading, setLoading] = useState([true]);
 
     useEffect(() => {
-        customPromise(productos).then(respuesta => {setProducts(respuesta)
-            setLoading(false)
+        customPromise(productos).then(respuesta => {
+            setProducts(respuesta)
             if (IdCategoria) {
+                setLoading(false)
                 const productosFiltrados = productos.filter(productos => productos.categoria === IdCategoria)
                 setProducts(productosFiltrados)
             } else {
-                setProducts(productos)
+                setTimeout(() => {
+                    // setProducts(respuesta)
+                    setLoading(false)
+                    setProducts(productos)
+                }, 1000)
             }
         })
-    },[IdCategoria, loading])
+    }, [IdCategoria])
 
     console.log(products)
 
