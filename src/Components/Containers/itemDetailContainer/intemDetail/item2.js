@@ -3,14 +3,23 @@ import React from 'react';
 import ItemDetail from './itemDetail';
 
 
-const Item2 = ({ item }) => {
+const Item2 = ({ item, onAdd }) => {
     return (
-        <div className='item2-container'>
-            {item.map((produ) => <ItemDetail item={produ} />)}
+        <div style={styles.ItemDtl} className='item2-container'>
+            {item.map((produ) => <ItemDetail  item={produ} stock={produ.stock} onAdd={onAdd}/>)}
 
         </div>
     )
 }
 
+const styles = {
+    ItemDtl: {
+        width: 'max-width',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'white',
+    },
 
+}
 export default Item2

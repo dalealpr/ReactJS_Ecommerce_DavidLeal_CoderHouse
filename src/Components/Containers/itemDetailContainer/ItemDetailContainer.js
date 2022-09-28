@@ -34,16 +34,19 @@ const ItemDetailContainer = () => {
 
     }, [IdProducto])
 
+    
+    //Funcion onAdd Agregar al carrito
+    const onAdd = (count) => {
+        window.Swal = Swal
 
-    //solucion 2
-    // useEffect (() =>{
-    //     customPromise (productos)
-    //         .then (respuesta => {
-    //             setProducts(respuesta(IdProducto))
-    //             setLoading (false)
-    //         })
-
-    // }, [IdProducto]);
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: count + ' Producto(s) Agregado(s)',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
 
 
     console.log(producto)
@@ -57,7 +60,7 @@ const ItemDetailContainer = () => {
             {loading ?     
             
             <FadeLoader color="#ebc700" size={130} loading={loading} />:
-            <Item2 item={producto} />
+            <Item2 item={producto} onAdd={onAdd}/>
             }
 
         </div>
@@ -67,8 +70,8 @@ const ItemDetailContainer = () => {
 //ESTILOS CSS
 const styles = {
     ItemDetailContainer: {
-        width: 'max-width',
-        padding: '30px',
+        width: '100%',
+        padding: '30px 0px',
         backgroundColor: 'black',
         display: 'flex',
         flexDirection: 'column',

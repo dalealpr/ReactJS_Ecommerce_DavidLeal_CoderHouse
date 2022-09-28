@@ -1,7 +1,9 @@
 import React from 'react';
 import Item2 from './item2';
+import ItemCount from './itemCount/ItemCount';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, stock, onAdd }) => {
+
 
     return (
         < div className='itemDetail' style={styles.ItemDetail}>
@@ -17,6 +19,7 @@ const ItemDetail = ({ item }) => {
                     <h4 style={styles.h4}>{item.nombre}</h4>
                     <span style={styles.precio}>${item.precio}</span>
                     <p style={styles.parrafo}>{item.descrp}</p>
+                    <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
                 </div>
             </div>
 
@@ -26,8 +29,8 @@ const ItemDetail = ({ item }) => {
 
 const styles = {
     ItemDetail: {
-        width: 'max-width',
-        padding: '30px',
+        width: '65%',
+        padding: '30px 80px',
         backgroundColor: '#333333',
         display: 'flex',
         flexDirection: 'column',
@@ -41,16 +44,16 @@ const styles = {
     },
 
     h4: {
-        fontSize: '35px',
+        fontSize: '27px',
         marginBottom: '30px',
     },
 
     DetailCont: {
         display: 'grid',
-        height: '380px',
+        height: '460px',
         gridTemplateColumns: "repeat(2, 1fr)",
         padding: '40px 70px',
-        gap: '40px',
+        gap: '90px',
     },
 
     DetailContText: {
