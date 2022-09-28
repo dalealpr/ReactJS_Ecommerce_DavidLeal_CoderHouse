@@ -1,11 +1,13 @@
 import React from 'react';
 //Import Components
+import ItemDetail from './itemDetail';
 
 
-const Item2 = () => {
+const Item2 = ({ item }) => {
     return (
         <div className='item2-container'>
-            <h2>Nosotros</h2>
+            {item.map((produ) => <ItemDetail item={produ} />)}
+
         </div>
     )
 }

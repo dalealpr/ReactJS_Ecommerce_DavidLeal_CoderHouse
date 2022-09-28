@@ -8,6 +8,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 import { productos } from '../../../stockProductosX';
 import { customPromise } from '../../../customPromise';
 import ItemDetail from './intemDetail/itemDetail';
+import Item2 from './intemDetail/item2';
 
 
 const ItemDetailContainer = () => {
@@ -48,18 +49,16 @@ const ItemDetailContainer = () => {
     console.log(producto)
 
     return (
+
         <div className='ItemDetailContainer' style={styles.ItemDetailContainer} >
 
             <h2 style={styles.h2}>ItemDetailContainer</h2>
 
-            <FadeLoader color="#ebc700" size={130} loading={loading} />
-
+            {loading ?     
             
-            {producto.map((produ) => 
-            <ItemDetail item={produ} />
-            
-            )}
-            {/* <ItemDetail item={producto} /> */}
+            <FadeLoader color="#ebc700" size={130} loading={loading} />:
+            <Item2 item={producto} />
+            }
 
         </div>
     )
