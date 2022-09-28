@@ -1,39 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import ItemList from './itemList/ItemList';
+import { customPromise } from '../../../customPromise';
 //Import SweetAlerts
 import Swal from 'sweetalert2';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
 //Import Lista de productos .JSON
 import stockProducts from "../../../stockProducts.json";
+import { productos } from "../../../stockProductosX"
+//Hook useParams (traer cont IdCategoria)
+import { useParams } from "react-router-dom";
 
 
-//Promesa
-const promesa = new Promise((res, rej) => {
-    res(stockProducts)
-})
-
+//Funcion Componente "ItemListContainer"
 const ItemListContainer = ({ greeting }) => {
+
+    let { IdCategoria } = useParams()
+    console.log(IdCategoria);
 
     //State
     const [products, setProducts] = useState([])
-    let [loading, setLoading] = useState(true);
+    let [loading, setLoading] = useState([true]);
 
     useEffect(() => {
-        promesa
-            .then((data) => {
-                setTimeout(() => {
-                console.log('esta todo bien')
-                setProducts(data)//Actualizacion del componente
-                setLoading(!loading)//Spinner
-                },2000)
-            })
+        customPromise(productos).then(respuesta => {setProducts(respuesta)
+            setLoading(false)
+            if (IdCategoria) {
+                const productosFiltrados = productos.filter(productos => productos.categoria === IdCategoria)
+                setProducts(productosFiltrados)
+            } else {
+                setProducts(productos)
+            }
+        })
+    },[IdCategoria, loading])
 
-            .catch(() => {
-                console.log('esta todo mal')
-            })
-
-    }, [])
+    console.log(products)
 
     //Funcion onAdd Agregar al carrito
     const onAdd = (count) => {
@@ -48,12 +49,16 @@ const ItemListContainer = ({ greeting }) => {
         })
     }
 
+
+
     return (
         <div className='ItemListContainer' style={styles.ItemListContainer}>
             <h2 style={styles.h1}>{greeting}</h2>
-
-            <ItemList products={products} onAdd={onAdd} />
-            <FadeLoader color="#ebc700" size={130} loading={loading}/>
+            {loading ?
+                <FadeLoader color="#ebc700" size={130} loading={loading} />
+                :
+                <ItemList products={products} onAdd={onAdd} />
+            }
         </div>
     )
 }

@@ -1,7 +1,7 @@
 [
-    {"id": 2001, "nombre":"Guitarras Acusticas", "ruta":"/productos/guitarrasacusticas"},
-    {"id": 2002, "nombre":"Guitarras Electricas", "ruta":"/productos/guitarraselectricas"},
-    {"id": 2003, "nombre":"Bajos", "ruta":"/productos/bajos"},
-    {"id": 2004, "nombre":"Baterias", "ruta":"/productos/baterias"},
-    {"id": 2005, "nombre":"Teclados", "ruta":"/productos/teclados"}
+    {"id": 2001, "nombre":"Guitarras Acusticas", "ruta":"/categoria/Guitarras Acusticas"},
+    {"id": 2002, "nombre":"Guitarras Electricas", "ruta":"/categoria/GuitarrasElectricas"},
+    {"id": 2003, "nombre":"Bajos", "ruta":"/categoria/Bajos"},
+    {"id": 2004, "nombre":"Baterias", "ruta":"/categoria/Baterias"},
+    {"id": 2005, "nombre":"Teclados", "ruta":"/categoria/Teclados"}
 ]

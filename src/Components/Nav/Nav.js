@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 //Import Link Router
 import { Link, NavLink } from "react-router-dom";
 //Import IMG
@@ -10,55 +11,41 @@ import CartWidget from './CartWidget';
 import categoriasProducts from "../../categoriasProductos.json";
 
 
-//Promesa
-const promesa = new Promise((res, rej) => {
-    res(categoriasProducts)
-})
-
-
 const Nav = () => {
-
-    //State
-    const [categorias, setCategorias] = useState([])
-
-    useEffect(() => {
-        promesa
-            .then((data) => {
-                console.log('esta todo bien')
-                setCategorias(data)//Actualizacion del componente
-            })
-            .catch(() => {
-                console.log('esta todo mal')
-            })
-    }, [])
 
 
     return (
         <div style={styles.navConteiner} className='nav-conteiner'>
-
             {/* Imagen Logo del eCommerce */}
             <Link className='a_logo' style={styles.logo} to={'/'}><img src={Logo} style={styles.logoImg} alt="logo" /></Link>
-
-
-
             {/* Nav de la pagina */}
             <nav style={styles.nav}>
                 <ul className='menu_horizontal' style={styles.nav_ul}>
+                    
                     <li className='nav_li' style={styles.nav_li}>
+
                         <NavLink className='nav_a' id='btnProducto' style={styles.nav_a} to={'/productos'}>PRODUCTOS<img src={Flecha} style={styles.flecha} /></NavLink>
                         <ul className='menu_vertical' style={styles.prodList_ul}>
 
                             {/* categoria de productos */}
-                            {categorias.map((categoria) =>
+                            {categoriasProducts.map((categoria) =>
                                 <li style={styles.prodList_li}>
                                     <NavLink key={categoria.id} className='nav_a_list' to={categoria.ruta} style={styles.NavLink}>{categoria.nombre}</NavLink>
                                 </li>
                             )}
                         </ul>
                     </li>
-                    <li className='nav_li' style={styles.nav_li}><NavLink className='nav_a' style={styles.nav_a} to={'/nosotros'}>NOSOTROS</NavLink></li>
-                    <li className='nav_li' style={styles.nav_li}><NavLink className='nav_a' style={styles.nav_a} to={'/contacto'}>CONTACTO</NavLink></li>
-                    <li className='nav_li' style={styles.nav_li}><NavLink className='nav_a' style={styles.nav_a} to={'/usuario'}>USUARIO</NavLink></li>
+
+
+                    <li className='nav_li' style={styles.nav_li}>
+                        <NavLink className='nav_a' style={styles.nav_a} to={'/nosotros'}>NOSOTROS</NavLink></li>
+                    <li className='nav_li' style={styles.nav_li}>
+                        <NavLink className='nav_a' style={styles.nav_a} to={'/contacto'}>CONTACTO</NavLink>
+                    </li>
+                    <li className='nav_li' style={styles.nav_li}>
+                        <NavLink className='nav_a' style={styles.nav_a} to={'/usuario'}>USUARIO</NavLink>
+                    </li>
+
                 </ul>
             </nav>
 

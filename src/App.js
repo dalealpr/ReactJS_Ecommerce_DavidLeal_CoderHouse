@@ -1,6 +1,6 @@
 import React from 'react';
 //Import Router
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Switch } from "react-router-dom";
 //Import Components
 import Nav from './Components/nav/Nav';
 import Header from './Components/header/Header';
@@ -8,6 +8,9 @@ import ItemListContainer from './Components/containers/itemListContainer/ItemLis
 import Cart from './Components/cartView/Cart';
 import Footer from './Components/footer/Footer';
 import Home from './Components/home/Home';
+import Nosotros from './Components/nosotros/Nosotros';  
+import Contacto from './Components/contacto/Contacto';
+import Usuario from './Components/usuario/Usuario';
 
 
 function App() {
@@ -33,11 +36,16 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          {/* <Header /> */}
           <Route path='/' element={<Home/>} />
-          <Route path='categoria/' />
-          <Route path='productos/' element={<ItemListContainer/>}/>
+          <Route path='productos' element={<ItemListContainer/>}/>
+          <Route path='nosotros' element={<Nosotros/>}/>
+          <Route path='contacto' element={<Contacto/>}/>
+          <Route path='usuario' element={<Usuario/>}/>
           <Route path='/cart/'element={<Cart/>} />
+
+          <Route path='/categoria/:IdCategoria' element={<ItemListContainer/>}/>
+          <Route path='productos/:IdProducto' element={<ItemListContainer/>}/>
+
         </Routes>
         <Footer/>
       </BrowserRouter>

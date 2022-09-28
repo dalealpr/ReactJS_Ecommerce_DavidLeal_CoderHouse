@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState, } from 'react';
 import Item from './item/Item';
+//Import Spinner
+import FadeLoader from "react-spinners/FadeLoader";
+
 
 const ItemList = ({ products, onAdd }) => {
+
+    let [loading, setLoading] = useState(true);
+
     return (
         < div style={styles.itemList}>
             <h3>ItemList</h3>
             <div style={styles.itemsCont}>
 
-                {products.map((producto) => <Item key={producto.id} producto={producto} onAdd={onAdd} stock={producto.stock}/>)}
+
+                {products.map((producto) => <Item key={producto.id} producto={producto} onAdd={onAdd} stock={producto.stock} />)}
+
             </div>
         </div>
     )
