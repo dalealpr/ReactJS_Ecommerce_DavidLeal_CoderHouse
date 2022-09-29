@@ -6,7 +6,7 @@ import ItemDetail from './itemDetail';
 const Item2 = ({ item }) => {
     return (
         <div style={styles.ItemDtl} className='item2-container'>
-            {item.map((produ) => <ItemDetail  item={produ} stock={produ.stock} />)}
+            {item.map((produ) => <ItemDetail  item={produ} key={produ.id} stock={produ.stock}/>)}
 
         </div>
     )

@@ -3,9 +3,9 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer>
-            <div class="footer_cont-1" style={styles.fCont1}>
+            <div className="footer_cont-1" style={styles.fCont1}>
 
-                <div style={styles.fCont1_img_cont} class="footer_cont-sn">
+                <div style={styles.fCont1_img_cont} className="footer_cont-sn">
                     <a href="https://www.instagram.com/" target="_blank"><img style={styles.fCont1_img} src="https://i.ibb.co/GF9f9NH/ico-instagram.png" /></a>
                     <a href="https://www.facebook.com/" target="_blank"><img style={styles.fCont1_img} src="https://i.ibb.co/tcmRbsy/ico-facebook.png" /></a>
                     <a href="https://twitter.com/" target="_blank"><img style={styles.fCont1_img} src="https://i.ibb.co/S5BK5Bz/ico-twitter.png" /></a>
@@ -15,8 +15,8 @@ const Footer = () => {
             </div>
 
             <div style={styles.fCont2_3}>
-                <div  class="footer_cont-2">
-                    <div style={styles.fCont2} class="footer_cont-2t">
+                <div  className="footer_cont-2">
+                    <div style={styles.fCont2} className="footer_cont-2t">
                         <img  style={styles.fCont2_img} src="https://i.ibb.co/X7k09mc/logo-01-white.png" alt="" />
 
                         <p style={styles.fCont2_text}>Nuestro proposito es traerte los mejores instrumentos musicales, de las mejores marcas al mejor
@@ -24,9 +24,9 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div class="footer_cont-3" style={styles.fCont3}>
+                <div className="footer_cont-3" style={styles.fCont3}>
 
-                    <div class="footer-cont-3p1">
+                    <div className="footer-cont-3p1">
                         <h4 style={styles.fCont3h4}>Servicio al cliente</h4>
                         <ul style={styles.fCont3_ul}>
                             <li><a style={styles.fCont3_a} href="">Productos</a></li>
@@ -37,7 +37,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div class="footer-cont-3p2">
+                    <div className="footer-cont-3p2">
                         <h4 style={styles.fCont3h4}>DX System Store</h4>
                         <ul style={styles.fCont3_ul}>
                             <li><a style={styles.fCont3_a} href="">Productos</a></li>

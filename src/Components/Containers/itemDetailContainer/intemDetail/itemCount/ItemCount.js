@@ -26,7 +26,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
-    // Funcion sumar productos
+    // Funcion agregar 
     const AddCart = () => {
         onAdd(contador)
     }

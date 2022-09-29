@@ -27,8 +27,8 @@ const Nav = () => {
 
                             {/* categoria de productos */}
                             {categoriasProducts.map((categoria) =>
-                                <li style={styles.prodList_li}>
-                                    <NavLink key={categoria.id} className='nav_a_list' to={categoria.ruta} style={styles.NavLink}>{categoria.nombre}</NavLink>
+                                <li style={styles.prodList_li} key={categoria.id}>
+                                    <NavLink  className='nav_a_list' to={categoria.ruta} style={styles.NavLink}>{categoria.nombre}</NavLink>
                                 </li>
                             )}
                         </ul>
