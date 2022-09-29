@@ -1,11 +1,18 @@
 //Hook States
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
 
-
+    //states
     const [contador, setContador] = useState(1);
+
+
+
+    useEffect(() => {
+         
+    })
+
     // Funcion sumar productos
     const sumar = () => {
         if (contador < stock) {
@@ -26,7 +33,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     return (
         <div style={styles.countContainer} className="Count-container">
-            <span style={styles.countStock}>Stock: {stock}</span>
+            <span style={styles.countStock}>Max Stock: {stock}</span>
 
             <div style={styles.countInfo} >
                 <button style={styles.countBtn} onClick={restar}>-</button>

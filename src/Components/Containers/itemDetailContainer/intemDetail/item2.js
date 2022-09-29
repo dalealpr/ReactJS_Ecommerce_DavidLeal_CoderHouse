@@ -3,10 +3,10 @@ import React from 'react';
 import ItemDetail from './itemDetail';
 
 
-const Item2 = ({ item, onAdd }) => {
+const Item2 = ({ item }) => {
     return (
         <div style={styles.ItemDtl} className='item2-container'>
-            {item.map((produ) => <ItemDetail  item={produ} stock={produ.stock} onAdd={onAdd}/>)}
+            {item.map((produ) => <ItemDetail  item={produ} stock={produ.stock} />)}
 
         </div>
     )

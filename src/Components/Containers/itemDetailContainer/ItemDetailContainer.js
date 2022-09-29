@@ -34,19 +34,6 @@ const ItemDetailContainer = () => {
 
     }, [IdProducto])
 
-    
-    //Funcion onAdd Agregar al carrito
-    const onAdd = (count) => {
-        window.Swal = Swal
-
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: count + ' Producto(s) Agregado(s)',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    }
 
 
     console.log(producto)
@@ -60,7 +47,7 @@ const ItemDetailContainer = () => {
             {loading ?     
             
             <FadeLoader color="#ebc700" size={130} loading={loading} />:
-            <Item2 item={producto} onAdd={onAdd}/>
+            <Item2 item={producto}/>
             }
 
         </div>

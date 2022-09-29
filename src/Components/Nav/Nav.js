@@ -48,7 +48,7 @@ const Nav = () => {
             </nav>
 
             {/* Icono Carrito */}
-            <Link to={'/cart/'}><CartWidget /></Link>
+            <Link to={'/cart'}><CartWidget /></Link>
 
         </div>
     )

@@ -1,8 +1,6 @@
 import React, { useEffect, useState, } from 'react';
 import ItemList from './itemList/ItemList';
 import { customPromise } from '../../../customPromise';
-//Import SweetAlerts
-import Swal from 'sweetalert2';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
 import { productos } from '../../../stockProductos';
@@ -39,20 +37,6 @@ const ItemListContainer = ({ greeting }) => {
     }, [IdCategoria])
 
 
-    //Funcion onAdd Agregar al carrito
-    const onAdd = (count) => {
-        window.Swal = Swal
-
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: count + ' Producto(s) Agregado(s)',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    }
-
-
 
     return (
         <div className='ItemListContainer' style={styles.ItemListContainer}>
@@ -60,7 +44,7 @@ const ItemListContainer = ({ greeting }) => {
             {loading ?
                 <FadeLoader color="#ebc700" size={130} loading={loading} />
                 :
-                <ItemList products={products} onAdd={onAdd} />
+                <ItemList products={products} />
             }
         </div>
     )

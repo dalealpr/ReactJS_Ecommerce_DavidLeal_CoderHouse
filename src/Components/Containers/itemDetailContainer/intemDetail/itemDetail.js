@@ -1,9 +1,30 @@
-import React from 'react';
-import Item2 from './item2';
-import ItemCount from './itemCount/ItemCount';
+//Hook States
+import React, { useEffect, useState } from 'react';
+//Import Link Router
+import { Link, NavLink } from "react-router-dom";
+import ItemCount from './itemCount/ItemCount';//Import SweetAlerts
+import Swal from 'sweetalert2';
 
-const ItemDetail = ({ item, stock, onAdd }) => {
 
+const ItemDetail = ({ item, stock, }) => {
+
+    //State
+    const [irCarrito, setIrCarrito] = useState(false)
+
+    //Funcion onAdd Agregar al carrito
+    const onAdd = (count) => {
+        window.Swal = Swal
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: count + ' Producto(s) Agregado(s)',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+        setIrCarrito(true)
+    }
 
     return (
         < div className='itemDetail' style={styles.ItemDetail}>
@@ -19,7 +40,11 @@ const ItemDetail = ({ item, stock, onAdd }) => {
                     <h4 style={styles.h4}>{item.nombre}</h4>
                     <span style={styles.precio}>${item.precio}</span>
                     <p style={styles.parrafo}>{item.descrp}</p>
-                    <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
+
+                    {/* if Ternario Cambio Count por Boton */}
+                    {irCarrito ? <Link to='/cart' style={styles.linkcount}> <button style={styles.countBtnCart} >Terminar Compra</button></Link> :
+                        <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+                    }
                 </div>
             </div>
 
@@ -72,6 +97,17 @@ const styles = {
     parrafo: {
         marginTop: '30px',
         textAlign: 'left',
+    },
+
+
+    //Btn Agregar al carrito
+    countBtnCart: {
+        padding: '15px 28px',
+        backgroundColor: '#F4D03F',
+        color: 'black',
+        fontSize: '16px',
+        fontWeight: '500',
+        borderRadius: '4px',
     },
 
 }
