@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 //Import Link Router
 import { Link, NavLink } from "react-router-dom";
+//Import Context
+import { useCartContext } from '../../../../context/CartContext';
 import ItemCount from './itemCount/ItemCount';//Import SweetAlerts
 import Swal from 'sweetalert2';
 
@@ -10,9 +12,14 @@ const ItemDetail = ({ item, stock, }) => {
 
     //State
     const [irCarrito, setIrCarrito] = useState(false)
+    const {agregarProducto} = useCartContext();
 
     //Funcion onAdd Agregar al carrito
     const onAdd = (count) => {
+        //Funcion Agregar Producto
+        agregarProducto(item, count);
+
+        //Alert
         window.Swal = Swal
 
         Swal.fire({
@@ -47,7 +54,6 @@ const ItemDetail = ({ item, stock, }) => {
                     }
                 </div>
             </div>
-
         </div>
     )
 }
