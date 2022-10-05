@@ -114,7 +114,7 @@ export const productos = [
 
     // ---------------- BAJOS  ---------------- //
     { 
-        id: 111, 
+        id: 1111, 
         nombre: "Bajo Ibanez GSR180 Black", 
         marca: "Ibanez", 
         modelo: "GSR180", 
@@ -170,7 +170,7 @@ export const productos = [
 
     // ---------------- BATERIAS  ---------------- //
     { 
-        id: 116, 
+        id: 1116, 
         nombre: "Bateria PowerDrums PD-04 Green",
         marca: "PowerDrums", 
         modelo: "PD-04", 

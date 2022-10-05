@@ -25,7 +25,7 @@ const ItemListContainer = ({ greeting }) => {
                 setLoading(false)
                 const productosFiltrados = productos.filter(productos => productos.categoria === IdCategoria)
                 setProducts(productosFiltrados)
-                console.log(productosFiltrados)
+                // console.log(productosFiltrados)
             } else {
                 setTimeout(() => {
                     // setProducts(respuesta)

@@ -17,7 +17,9 @@ const ItemDetail = ({ item, stock, }) => {
     //Funcion onAdd Agregar al carrito
     const onAdd = (count) => {
         //Funcion Agregar Producto
-        agregarProducto(item, count);
+        agregarProducto(item, count)
+        console.log('Numero Producto(s): '+ count)
+
 
         //Alert
         window.Swal = Swal

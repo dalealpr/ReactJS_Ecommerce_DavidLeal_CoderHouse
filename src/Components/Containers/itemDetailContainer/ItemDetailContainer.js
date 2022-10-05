@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
     const [producto, setProducts] = useState([])
     let [loading, setLoading] = useState([true]);
     const { IdProducto } = useParams();
-    console.log(IdProducto);
+    // console.log(IdProducto);
 
     //solucion 1
     useEffect(() => {
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
                 const IdProdParseado = parseInt(IdProducto)
 
                 setLoading(false)
-                const productoFiltrado = productos.filter(productos => productos.id === IdProdParseado)
+                const productoFiltrado = productos.filter(producto => producto.id === IdProdParseado)
                 setProducts(productoFiltrado)
             }, 1000)
         })
@@ -35,8 +35,7 @@ const ItemDetailContainer = () => {
     }, [IdProducto])
 
 
-
-    console.log(producto)
+    // console.log(producto)
 
     return (
 
