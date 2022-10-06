@@ -1,11 +1,14 @@
 import React from 'react';
 import CartImg from '../../assets/img/nav/cart_01_white.png';
-
+import { useCartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
+
+    const {totalProductos}= useCartContext()
+
     return (
         <div style={styles.btn_cont} className="cart-conteiner">
-        <span style={styles.num_cart}>0</span>
+        <span style={styles.num_cart}>{totalProductos() || ''}</span>
         <button style={styles.btn}><img src={CartImg} style={styles.btn_img} onMouseOver={hoverImg} onMouseOut={ofHoverImg} className='img_cart' id='img_cart'></img></button>
         </div>
     )

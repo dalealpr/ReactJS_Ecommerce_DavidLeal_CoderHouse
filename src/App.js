@@ -3,10 +3,13 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 //Import Context 
 import CartProvider from './context/CartContext';
+//Import Productos
+import { productos } from './stockProductos';
 //Import Components
 import Nav from './Components/nav/Nav';
 import Header from './Components/header/Header';
 import ItemListContainer from './Components/containers/itemListContainer/ItemListContainer';
+import ItemCart from './Components/cartView/ItemCart';
 import Cart from './Components/cartView/Cart';
 import Footer from './Components/footer/Footer';
 import Home from './Components/home/Home';
@@ -33,7 +36,7 @@ function App() {
             <Route path='nosotros' element={<Nosotros />} />
             <Route path='contacto' element={<Contacto />} />
             <Route path='usuario' element={<Usuario />} />
-            <Route path='/cart' element={<Cart />} />
+            <Route path='/cart' element={<Cart/>} />
 
             <Route path='/categoria/:IdCategoria' element={<ItemListContainer />} />
             <Route path='/item/:IdProducto' element={<ItemDetailContainer />} />
