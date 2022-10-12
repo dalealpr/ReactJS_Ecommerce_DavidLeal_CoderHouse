@@ -27,7 +27,8 @@ export const productos = [
     { 
         id: 1003, 
         nombre: "Epiphone Les Paul Standar 50s Metallic Gold", 
-        marca: "Epiphone", "modelo": "Les Paul Standar 50s", 
+        marca: "Epiphone",
+        modelo: "Les Paul Standar 50s", 
         precio: 900, 
         stock: 5,
         categoria: "guitarras-electricas", 
@@ -37,7 +38,8 @@ export const productos = [
     { 
         id: 1004, 
         nombre: "LTD Kirk Hammet Signature White Zombie", 
-        marca: "LTD", "modelo": "White Zombie", 
+        marca: "LTD", 
+        modelo: "White Zombie", 
         precio: 1700, 
         stock: 2,
         categoria: "guitarras-electricas", 
@@ -114,7 +116,7 @@ export const productos = [
 
     // ---------------- BAJOS  ---------------- //
     { 
-        id: 1111, 
+        id: 1011, 
         nombre: "Bajo Ibanez GSR180 Black", 
         marca: "Ibanez", 
         modelo: "GSR180", 
@@ -170,7 +172,7 @@ export const productos = [
 
     // ---------------- BATERIAS  ---------------- //
     { 
-        id: 1116, 
+        id: 1016, 
         nombre: "Bateria PowerDrums PD-04 Green",
         marca: "PowerDrums", 
         modelo: "PD-04", 

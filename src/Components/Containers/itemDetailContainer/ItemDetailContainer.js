@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
 //Hook useParams (traer cont IdCategoria)
 import { useParams } from "react-router-dom";
-//Import SweetAlerts
-import Swal from 'sweetalert2';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
+//Firebase
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+
 import { productos } from '../../../stockProductos';
 import { customPromise } from '../../../customPromise';
-import ItemDetail from './intemDetail/itemDetail';
 import Item2 from './intemDetail/item2';
+
+
+//PASOS FIREBASE
+//1.- Traer el servicio de firestore
+//2.- Crear un puntero al dato que queremos traer
+//3.- Traer el datyo con una promesa
+
 
 
 const ItemDetailContainer = () => {
@@ -17,37 +24,28 @@ const ItemDetailContainer = () => {
     const [producto, setProducts] = useState([])
     let [loading, setLoading] = useState([true]);
     const { IdProducto } = useParams();
-    // console.log(IdProducto);
 
     //solucion 1
     useEffect(() => {
-        customPromise(productos).then(respuesta => {
-            setProducts(respuesta)
-            setTimeout(() => {
-                const IdProdParseado = parseInt(IdProducto)
 
-                setLoading(false)
-                const productoFiltrado = productos.filter(producto => producto.id === IdProdParseado)
-                setProducts(productoFiltrado)
-            }, 1000)
-        })
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'productos', IdProducto)
+
+
+
+        getDoc(queryDoc)
+            .then(res => setProducts({ id: res.id, ...res.data() }))
 
     }, [IdProducto])
 
 
-    // console.log(producto)
-
+    console.log(producto);
     return (
 
         <div className='ItemDetailContainer' style={styles.ItemDetailContainer} >
-
             <h2 style={styles.h2}>ItemDetailContainer</h2>
 
-            {loading ?     
-            
-            <FadeLoader color="#ebc700" size={130} loading={loading} />:
-            <Item2 item={producto}/>
-            }
+            <Item2 item={producto} />
 
         </div>
     )

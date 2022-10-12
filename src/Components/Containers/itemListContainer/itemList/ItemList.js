@@ -15,6 +15,7 @@ const ItemList = ({ products, onAdd }) => {
 
 
                 {products.map((producto) => <Item key={producto.id} producto={producto} onAdd={onAdd} stock={producto.stock} />)}
+                {/* <Item key={products.id} producto={products} onAdd={onAdd} stock={products.stock} /> */}
 
             </div>
         </div>

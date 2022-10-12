@@ -1,6 +1,8 @@
 import React, { useEffect, useState, } from 'react';
 import ItemList from './itemList/ItemList';
 import { customPromise } from '../../../customPromise';
+//Firebase
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 //Import Spinner
 import FadeLoader from "react-spinners/FadeLoader";
 import { productos } from '../../../stockProductos';
@@ -19,21 +21,22 @@ const ItemListContainer = ({ greeting }) => {
     let [loading, setLoading] = useState([true]);
 
     useEffect(() => {
-        customPromise(productos).then(respuesta => {
-            setProducts(respuesta)
-            if (IdCategoria) {
-                setLoading(false)
-                const productosFiltrados = productos.filter(productos => productos.categoria === IdCategoria)
-                setProducts(productosFiltrados)
-                // console.log(productosFiltrados)
-            } else {
-                setTimeout(() => {
-                    // setProducts(respuesta)
-                    setLoading(false)
-                    setProducts(productos)
-                }, 1000)
-            }
-        })
+
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'productos')
+
+
+
+        if (IdCategoria) {
+            const queryFilter = query(queryCollection, where('categoria', '==', IdCategoria))
+            getDocs(queryFilter)
+                .then(res => setProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))))
+
+        } else {
+            getDocs(queryCollection)
+                .then(res => setProducts(res.docs.map(product => ({ id: product.id, ...product.data() }))))
+        }
+
     }, [IdCategoria])
 
 
@@ -41,11 +44,8 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <div className='ItemListContainer' style={styles.ItemListContainer}>
             <h2 style={styles.h1}>{greeting}</h2>
-            {loading ?
-                <FadeLoader color="#ebc700" size={130} loading={loading} />
-                :
-                <ItemList products={products} />
-            }
+            <ItemList products={products} />
+
         </div>
     )
 }
