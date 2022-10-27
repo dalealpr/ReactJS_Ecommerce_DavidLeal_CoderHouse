@@ -1,15 +1,13 @@
-import React from 'react';
+//Hook States
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ItemCart from './ItemCart';
 import { useCartContext } from '../../context/CartContext';
 
 
 const Cart = () => {
-    const { cart, precioTotal,limpiarCarrito} = useCartContext()
+    const { cart, precioTotal, limpiarCarrito } = useCartContext()
 
-
-
-    console.log('lenght: ', cart.length)
 
     if (cart.length === 0) {
 
@@ -48,11 +46,13 @@ const Cart = () => {
                 </div>
 
                 <div style={styles.btnSecCont}>
-                    <Link to='/'  style={styles.btnSec}>Seguir Comprando</Link>
+                    <Link to='/' style={styles.btnSec}>Seguir Comprando</Link>
                     <button style={styles.btnSec} onClick={limpiarCarrito}>Vaciar Carrito</button>
                 </div>
 
-                <button style={styles.btnPr}>Finalizar Compra</button>
+
+                <Link to='/Form'style={styles.btnPr} >Emitir Compra</Link>
+
 
 
 
@@ -66,7 +66,7 @@ const Cart = () => {
 const styles = {
     divSinElem: {
         width: '100%',
-        height: '500px',
+        height: '550px',
 
         display: 'flex',
         flexDirection: 'column',
@@ -153,7 +153,7 @@ const styles = {
         borderBottom: '2px solid #b9b9b9',
     },
 
-    totalP:{
+    totalP: {
         fontWeight: '700',
         fontSize: '22px',
     },
@@ -168,20 +168,20 @@ const styles = {
 
     //------------------------------------------------------------//
 
-    btnSecCont:{
+    btnSecCont: {
         width: '70%',
         display: 'flex',
         justifyContent: 'center',
-        gap:'20px',
+        gap: '20px',
     },
 
-    btnSec:{
+    btnSec: {
         width: '50%',
-        height: '40px',
+        height: '45px',
         marginTop: '18px',
         backgroundColor: '#454545',
         color: 'white',
-        fontSize: '12px',
+        fontSize: '15px',
         fontWeight: '400',
         borderRadius: '4px',
         textAlign: 'center',
@@ -191,17 +191,41 @@ const styles = {
 
     },
 
-    btnPr:{
+    btnPr: {
         width: '70%',
         height: '50px',
-        marginTop: '18px',
+        marginTop: '25px',
         backgroundColor: '#F4D03F',
         color: 'black',
         fontSize: '16px',
-        fontWeight: '700',
+        fontWeight: '500',
         borderRadius: '4px',
         textAlign: 'center',
 
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+
+
+    contIdOrdenCompra: {
+        marginTop: '30px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    idOrdenCompra: {
+        fontSize: '17px',
+        fontWeight: '500',
+    },
+
+    idOrdenComprad: {
+        marginTop: '10px',
+        fontSize: '17px',
+        fontWeight: '700',
     },
 
 }

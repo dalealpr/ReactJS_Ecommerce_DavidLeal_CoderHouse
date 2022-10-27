@@ -1,13 +1,22 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext,useEffect} from "react";
 const CartContext = React.createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 
 const CartProvider = ({children}) => {
     //Estado Carrito
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem('CART')) || [])
    
 
+    useEffect(() =>{
+        localStorage.setItem('CART', JSON.stringify(cart));
+
+        let total = 0
+        cart.forEach(item => {
+            total += item.amount * item.price;
+            
+        });
+    },[cart])
 //--------------------------------------------------------------------------------------------------------------//
 
 //FUNCIONES PARA EL CARRITO 
@@ -21,6 +30,7 @@ const agregarProducto = (item,stock)=>{
         setCart([...cart,{...item,stock}])
     }
 }
+
 //Comprobacion Agregar al carrito
 console.log('carrito', cart)
 

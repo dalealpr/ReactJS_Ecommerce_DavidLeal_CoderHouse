@@ -17,6 +17,8 @@ import Nosotros from './Components/nosotros/Nosotros';
 import Contacto from './Components/contacto/Contacto';
 import Usuario from './Components/usuario/Usuario';
 import ItemDetailContainer from './Components/containers/itemDetailContainer/ItemDetailContainer';
+import Form from './Components/cartView/Formulario/Form';
+import FinalCompra from './Components/cartView/Formulario/FinalCompra';
 
 
 function App() {
@@ -37,6 +39,9 @@ function App() {
             <Route path='contacto' element={<Contacto />} />
             <Route path='usuario' element={<Usuario />} />
             <Route path='/cart' element={<Cart/>} />
+            <Route path='/form' element={<Form/>} />
+            <Route path='/final-compra' element={<FinalCompra/>} />
+
 
             <Route path='/categoria/:IdCategoria' element={<ItemListContainer />} />
             <Route path='/item/:IdProducto' element={<ItemDetailContainer />} />

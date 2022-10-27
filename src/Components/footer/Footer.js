@@ -60,6 +60,7 @@ const Footer = () => {
 
 //Estilos CSS
 const styles = {
+
     fCont1: {
         width: "100%",
         backgroundColor: '#616161',

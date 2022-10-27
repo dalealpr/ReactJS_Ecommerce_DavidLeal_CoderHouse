@@ -104,10 +104,10 @@ const styles = {
 
     //Btn Agregar al carrito
     countBtnCart: {
-        padding: '10px 18px',
+        padding: '12px 24px',
         backgroundColor: '#F4D03F',
         color: 'black',
-        fontSize: '14px',
+        fontSize: '16px',
         fontWeight: '500',
         borderRadius: '4px',
     },

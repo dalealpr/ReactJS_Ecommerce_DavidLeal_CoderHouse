@@ -12,13 +12,13 @@ const ItemDetail = ({ item, stock, }) => {
 
     //State
     const [irCarrito, setIrCarrito] = useState(false)
-    const {agregarProducto} = useCartContext();
+    const { agregarProducto } = useCartContext();
 
     //Funcion onAdd Agregar al carrito
     const onAdd = (count) => {
         //Funcion Agregar Producto
         agregarProducto(item, count)
-        console.log('Numero Producto(s): '+ count)
+        console.log('Numero Producto(s): ' + count)
 
 
         //Alert
@@ -38,16 +38,13 @@ const ItemDetail = ({ item, stock, }) => {
     return (
         < div className='itemDetail' style={styles.ItemDetail}>
 
-
-            <h3 style={styles.h3}>ItemDetail</h3>
-
             <div style={styles.DetailCont}>
 
                 <img style={styles.DetailImg} src={item.img} />
 
                 <div style={styles.DetailContText}>
                     <h4 style={styles.h4}>{item.nombre}</h4>
-                    <span style={styles.precio}>${item.precio}</span>
+                    <p style={styles.precio}>${item.precio}</p>
                     <p style={styles.parrafo}>{item.descrp}</p>
 
                     {/* if Ternario Cambio Count por Boton */}
@@ -63,8 +60,9 @@ const ItemDetail = ({ item, stock, }) => {
 const styles = {
     ItemDetail: {
         width: '65%',
-        padding: '30px 80px',
+        padding: '60px 80px',
         backgroundColor: '#333333',
+        borderRadius: '15px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -72,13 +70,13 @@ const styles = {
         color: 'white',
     },
 
-    h3: {
-        color: 'white',
-    },
 
     h4: {
-        fontSize: '27px',
+        width: '100%',
+        fontSize: '30px',
         marginBottom: '30px',
+        paddingBottom: '20px',
+        borderBottom: '1px solid #F4D03F',
     },
 
     DetailCont: {
@@ -98,24 +96,36 @@ const styles = {
     },
 
     precio: {
+        width: '100%',
         fontSize: '30px',
         marginBottom: '30px',
+        fontWeight: '500',
+        paddingBottom: '20px',
+        borderBottom: '1px solid #F4D03F',
     },
 
     parrafo: {
         marginTop: '30px',
         textAlign: 'left',
+        paddingBottom: '20px',
+        borderBottom: '1px solid #F4D03F',
     },
 
 
     //Btn Agregar al carrito
     countBtnCart: {
-        padding: '15px 28px',
+        marginTop: '60px',
+        padding: '13px 26px',
         backgroundColor: '#F4D03F',
         color: 'black',
         fontSize: '16px',
         fontWeight: '500',
         borderRadius: '4px',
+    },
+
+    linkcount:{
+        display: 'flex',
+        justifyContent: 'center',
     },
 
 }

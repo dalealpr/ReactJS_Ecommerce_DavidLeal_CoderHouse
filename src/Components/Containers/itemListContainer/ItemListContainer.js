@@ -10,15 +10,15 @@ import { productos } from '../../../stockProductos';
 import { useParams } from "react-router-dom";
 
 
+
 //Funcion Componente "ItemListContainer"
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
 
     let { IdCategoria } = useParams()
 
 
     //State
     const [products, setProducts] = useState([])
-    let [loading, setLoading] = useState([true]);
 
     useEffect(() => {
 
@@ -43,7 +43,8 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <div className='ItemListContainer' style={styles.ItemListContainer}>
-            <h2 style={styles.h1}>{greeting}</h2>
+
+            <h3 style={styles.titlCateg}>{IdCategoria}</h3>
             <ItemList products={products} />
 
         </div>
@@ -61,9 +62,12 @@ const styles = {
         padding: '20px 0',
     },
 
-    h1: {
-        padding: '10px 0',
-        color: 'black',
+
+    titlCateg: {
+        margin: "0px 0 45px 0",
+        paddingBottom:'5px',
+        fontSize: '25px',
+        borderBottom: '2px solid #F4D03F',
     }
 
 }
